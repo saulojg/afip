@@ -233,10 +233,10 @@ public class WsfeManagerImpl implements WsfeManager {
         if (errs != null) {
             errors.addAll(errs);
         }
-        Collection<? extends WsfeError> obs = getObservations(response);
+        /*Collection<? extends WsfeError> obs = getObservations(response);
         if (obs != null) {
             errors.addAll(obs);
-        }
+        }*/
         throwErrors(errors);
         return response;
     }

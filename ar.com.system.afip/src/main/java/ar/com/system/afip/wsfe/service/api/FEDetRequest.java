@@ -49,7 +49,7 @@ import java.util.Date;
 @XmlType(name = "FEDetRequest", propOrder = {"concepto", "docTipo", "docNro",
         "cbteDesde", "cbteHasta", "cbteFch", "impTotal", "impTotConc",
         "impNeto", "impOpEx", "impTrib", "impIVA", "fchServDesde",
-        "fchServHasta", "fchVtoPago", "monId", "monCotiz", "cbtesAsoc",
+        "fchServHasta", "fchVtoPago", "monId", "monCotiz", "condicionIVAReceptorId", "cbtesAsoc",
         "tributos", "iva", "opcionales"})
 @XmlSeeAlso({FECAEADetRequest.class, FECAEDetRequest.class})
 public class FEDetRequest {
@@ -104,6 +104,9 @@ public class FEDetRequest {
     @XmlElement(name = "MonCotiz")
     @Element(name = "MonCotiz")
     protected double monCotiz;
+    @XmlElement(name = "CondicionIVAReceptorId")
+    @Element(name = "CondicionIVAReceptorId")
+    protected int condicionIVAReceptorId;
     @XmlElement(name = "CbtesAsoc")
     @Element(name = "CbtesAsoc", required = false)
     protected ArrayOfCbteAsoc cbtesAsoc;
@@ -454,5 +457,13 @@ public class FEDetRequest {
     public void setOpcionales(ArrayOfOpcional value) {
         this.opcionales = value;
     }
+
+	public int getCondicionIVAReceptorId() {
+		return condicionIVAReceptorId;
+	}
+
+	public void setCondicionIVAReceptorId(int condicionIVAReceptorId) {
+		this.condicionIVAReceptorId = condicionIVAReceptorId;
+	}
 
 }

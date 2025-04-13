@@ -51,7 +51,7 @@ subprojects {
         (options as CoreJavadocOptions).addStringOption("sourcepath", "")
     }
 
-    publishing {
+    /*publishing {
         publications {
             mavenJava(MavenPublication) {
                 from components.java
@@ -95,7 +95,7 @@ subprojects {
 
     signing {
         sign publishing.publications.mavenJava
-    }
+    }*/
 
     javadoc {
         failOnError = false

@@ -11,7 +11,9 @@ abstract class BaseSetupDao implements SetupDao {
 	
 	public BaseSetupDao(Service billingService) {
 		checkNotNull(billingService);
-		checkArgument(billingService == Service.WSFE || billingService == Service.WSMTXCA,
+		// Orbital
+		//checkArgument(billingService == Service.WSFE || billingService == Service.WSMTXCA,
+		checkArgument(billingService == Service.WSFE || billingService == Service.WSMTXCA || billingService == Service.WSFEX,
 				"Invalid billing service: %s", billingService);
 		this.billingService = billingService;
 	}

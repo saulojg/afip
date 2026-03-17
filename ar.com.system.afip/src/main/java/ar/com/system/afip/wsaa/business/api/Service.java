@@ -2,6 +2,10 @@ package ar.com.system.afip.wsaa.business.api;
 
 public enum Service {
 
+	// Orbital
+	WSFEX("https://wswhomo.afip.gov.ar/wsfexv1/service.asmx?WSDL",
+			"https://servicios1.afip.gov.ar/wsfexv1/service.asmx?WSDL"),
+
     WSFE("https://wswhomo.afip.gov.ar/wsfev1/service.asmx?WSDL",
             "https://servicios1.afip.gov.ar/wsfev1/service.asmx?WSDL"),
     WSMTXCA("https://fwshomo.afip.gov.ar/wsmtxca/services/MTXCAService?wsdl",

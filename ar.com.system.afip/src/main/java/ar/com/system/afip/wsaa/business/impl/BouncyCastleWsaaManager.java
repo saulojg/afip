@@ -152,8 +152,9 @@ public class BouncyCastleWsaaManager implements WsaaManager {
             PrivateKey privKey = converter.getPrivateKey(pemKeyPair
                     .getPrivateKeyInfo());
 
+            String source = certificate.getSubjectX500Principal().getName();
             String cms = LoginTicketRequest
-                    .create(companyInfo.loginSource(),
+                    .create(source,
                             service,
                             setupDao.readSetup()
                                     .getEnvironment())

@@ -8,8 +8,10 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import ar.com.system.afip.wsaa.business.impl.Header;
 import ar.com.system.afip.wsaa.business.impl.LoginTicketRequest;
 import ar.com.system.afip.wsaa.business.impl.LoginTicketResponse;
+import ar.com.system.afip.wsaa.service.api.Credentials;
 import com.google.common.base.Throwables;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter;
@@ -18,6 +20,12 @@ public class XStreamProvider implements Provider<XStream> {
 	@Override
 	public XStream get() {
 		XStream xstream = new XStream();
+		xstream.allowTypes(new Class[] {
+			LoginTicketRequest.class,
+			LoginTicketResponse.class,
+			Header.class,
+			Credentials.class
+		});
 		xstream.useAttributeFor(LoginTicketRequest.class, "version");
 		xstream.alias("loginTicketRequest", LoginTicketRequest.class);
 		xstream.alias("loginTicketResponse", LoginTicketResponse.class);
